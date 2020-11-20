@@ -11,6 +11,7 @@ botPermission: [],
 authorPermission: [],
 aliases: [],
 description: "Nothing",
+run: async (client, message, args) => {}
 }
 
 ```
