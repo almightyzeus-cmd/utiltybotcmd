@@ -12,7 +12,7 @@ description: "Use this command to buy an item from the shop",
 run: async (client, message, args) => {
   let user = message.author;
 
-    let author = db.fetch(`money_${message.guild.id}_${user.id}`);
+    let author = db.fetch(`money_${message.author.id}`)
   
    let Embed = new discord.MessageEmbed()
       .setColor("#FFFFFF")
