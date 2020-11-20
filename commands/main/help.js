@@ -4,7 +4,7 @@ module.exports = {
   name: "help",
   description:
     "Get list of all command and even get to know every command detials",
-  usage: "help <cmd>",
+  usage: "we!help <cmd>",
   category: "info",
   run: async (client, message, args) => {
     if (args[0]) {
@@ -34,7 +34,7 @@ module.exports = {
 
       let com = {};
       for (let comm of commands.array()) {
-        let category = comm.category || "Unknown";
+        let category = comm.category || "EVENT";
         let name = comm.name;
 
         if (!com[category]) {

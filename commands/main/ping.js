@@ -4,7 +4,7 @@ module.exports = {
   name: "ping",
   category: "info",
   description: "Get bot ping :/",
-  usage: "ping",
+  usage: "we!ping",
   cooldown: 3000,
   run: (client, message) => {
     let ping = new discord.MessageEmbed()

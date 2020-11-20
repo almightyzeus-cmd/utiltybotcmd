@@ -2,13 +2,13 @@ const discord = require("discord.js");
 const db = require ("quick.db");
 module.exports = {
 name: "buy",
-usage: "Buy an item",
+usage: "we!buy <itemID>",
 ownerOnly: false, 
 cooldown: 5000,
 botPermission: [],
 authorPermission: [],
 aliases: [],
-description: "Nothing",
+description: "Use this command to buy an item from the shop",
 run: async (client, message, args) => {
   let user = message.author;
 
@@ -36,22 +36,22 @@ run: async (client, message, args) => {
       
       
       
-    } else if (args[0] == "AIS") {
+    } else if (args[0] == "PZA") {
     let Embed3 = new discord.MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
-        `:x: You need 100 event points to purchase Ad in servers spotlight.`
+        `:x: You need 100 event points to purchase Premium Zones Access.`
       );
 
       if (author < 100) return message.channel.send(Embed3);
 
-      db.fetch(`ais_${message.guild.id}_${user.id}`);
-      db.set(`ais_${message.guild.id}_${user.id}`, true);
+      db.fetch(`pza_${message.guild.id}_${user.id}`);
+      db.set(`pza_${message.guild.id}_${user.id}`, true);
 
       let Embed4 = new discord.MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(
-          `:white_check_mark: Purchased Ad in servers spotlight, For 100 Event Points.`
+          `:white_check_mark: Purchased Premium Zones Access, For 100 Event Points.`
         );
       db.subtract(`money_${message.guild.id}_${user.id}`, 100);
       message.channel.send(Embed4);
