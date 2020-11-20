@@ -36,14 +36,13 @@ run: async (client, message, args) => {
       
       
       
-
+    } else if (args[0] == "AIS") {
     let Embed3 = new discord.MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
         `:x: You need 100 event points to purchase Ad in servers spotlight.`
       );
 
-    if (args[0] == "AIS") {
       if (author < 100) return message.channel.send(Embed3);
 
       db.fetch(`ais_${message.guild.id}_${user.id}`);
@@ -57,7 +56,32 @@ run: async (client, message, args) => {
       db.subtract(`money_${message.guild.id}_${user.id}`, 100);
       message.channel.send(Embed4);
       
+      
+      
+      
+          } else if (args[0] == "OAC") {
+    let Embed5 = new discord.MessageEmbed()
+      .setColor("#FFFFFF")
+      .setDescription(
+        `:x: You need 200 event points to purchase ad channel in ad channels category + spotlight post with @others ping!`
+      );
+
+    
+      if (author < 200) return message.channel.send(Embed5);
+
+      db.fetch(`oac_${message.guild.id}_${user.id}`);
+      db.set(`oac_${message.guild.id}_${user.id}`, true);
+
+      let Embed6 = new discord.MessageEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(
+          `:white_check_mark: Purchased ad channel in ad channels category + spotlight post with @others ping, For 100 Event Points.`
+        );
+      db.subtract(`money_${message.guild.id}_${user.id}`, 200);
+      message.channel.send(Embed6);
+      
+      
+      
  }
 } 
-}
 };
