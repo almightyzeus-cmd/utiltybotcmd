@@ -176,6 +176,7 @@ client.on("message", async message => {
 
       db.subtract(`money_${message.guild.id}_${user.id}`, 3500);
       message.channel.send(Embed2);
+      
     } else if (args[0] == "nikes") {
       let Embed2 = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
