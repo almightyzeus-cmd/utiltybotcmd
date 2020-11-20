@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-
+const db = require("quick.db");
 const client = new Discord.Client();
 
 const config = require("./config.json");
@@ -59,11 +59,85 @@ client.on("message", async message => {
   }
 
   if (command === "lb") {
-    const lb = new Discord.MessageEmbed()
-      .setTitle("Leaderboard:")
-      .setDescription("Currently no users have points yet.")
-      .setFooter("To get points participate in events.");
-    message.channel.send(lb);
+    const embed = new Discord.RichEmbed()
+      .setDescription(
+        `**Input a Leaderboard Option**\n\nCoin Leaderboard: m!leaderboard coins\nFresh Nikes Leaderboard: m!leaderboard nikes\nCar Leaderboard: m!leaderboard car\nMansion Leaderboard: m!leaderboard mansion`
+      )
+      .setColor("#FFFFFF");
+
+    if (!args[0]) return message.channel.send(embed);
+
+    if (args[0] == "coins") {
+      let money = db.startsWith(`money_${message.guild.id}`, { sort: ".data" });
+      let content = "";
+
+      for (let i = 0; i < money.length; i++) {
+        let user = client.users.get(money[i].ID.split("_")[2]).username;
+
+        content += `${i + 1}. ${user} ~ ${money[i].data}\n`;
+      }
+
+      const embed = new Discord.RichEmbed()
+        .setDescription(
+          `**${message.guild.name}'s Coin Leaderboard**\n\n${content}`
+        )
+        .setColor("#FFFFFF");
+
+      message.channel.send(embed);
+    } else if (args[0] == "nikes") {
+      let nike = db.startsWith(`nikes_${message.guild.id}`, { sort: ".data" });
+      let content = "";
+
+      for (let i = 0; i < nike.length; i++) {
+        let user = client.users.get(nike[i].ID.split("_")[2]).username;
+
+        content += `${i + 1}. ${user} ~ ${nike[i].data}\n`;
+      }
+
+      const embed = new Discord.RichEmbed()
+        .setDescription(
+          `**${message.guild.name}'s Fresh Nikes Leaderboard**\n\n${content}`
+        )
+        .setColor("#FFFFFF");
+
+      message.channel.send(embed);
+    } else if (args[0] == "car") {
+      let cars = db.startsWith(`car_${message.guild.id}`, { sort: ".data" });
+      let content = "";
+
+      for (let i = 0; i < cars.length; i++) {
+        let user = client.users.get(cars[i].ID.split("_")[2]).username;
+
+        content += `${i + 1}. ${user} ~ ${cars[i].data}\n`;
+      }
+
+      const embed = new Discord.RichEmbed()
+        .setDescription(
+          `**${message.guild.name}'s Car Leaderboard**\n\n${content}`
+        )
+        .setColor("#FFFFFF");
+
+      message.channel.send(embed);
+    } else if (args[0] == "mansion") {
+      let mansions = db.startsWith(`house_${message.guild.id}`, {
+        sort: ".data"
+      });
+      let content = "";
+
+      for (let i = 0; i < mansions.length; i++) {
+        let user = client.users.get(mansions[i].ID.split("_")[2]).username;
+
+        content += `${i + 1}. ${user} ~ ${mansions[i].data}\n`;
+      }
+
+      const embed = new Discord.RichEmbed()
+        .setDescription(
+          `**${message.guild.name}'s Mansion Leaderboard**\n\n${content}`
+        )
+        .setColor("#FFFFFF");
+
+      message.channel.send(embed);
+    }
   }
 
   if (command === "help") {
@@ -74,6 +148,100 @@ client.on("message", async message => {
       )
       .setFooter("This is a list of commands.");
     message.channel.send(help);
+  }
+
+  if (command === "buy") {
+    //hey there
+    let user = message.author;
+
+    let author = db.fetch(`money_${message.guild.id}_${user.id}`);
+
+    let Embed = new Discord.RichEmbed()
+      .setColor("#FFFFFF")
+      .setDescription(
+        `<:Cross:618736602901905418> You need 2000 coins to purchase Bronze VIP`
+      );
+
+    if (args[0] == "bronze") {
+      if (author < 3500) return message.channel.send(Embed);
+
+      db.fetch(`bronze_${message.guild.id}_${user.id}`);
+      db.set(`bronze_${message.guild.id}_${user.id}`, true);
+
+      let Embed2 = new Discord.RichEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(
+          `<:Check:618736570337591296> Purchased Bronze VIP For 3500 Coins`
+        );
+
+      db.subtract(`money_${message.guild.id}_${user.id}`, 3500);
+      message.channel.send(Embed2);
+    } else if (args[0] == "nikes") {
+      let Embed2 = new Discord.RichEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(
+          `<:Cross:618736602901905418> You need 600 coins to purchase some Nikes`
+        );
+
+      if (author < 600) return message.channel.send(Embed2);
+
+      db.fetch(`nikes_${message.guild.id}_${user.id}`);
+      db.add(`nikes_${message.guild.id}_${user.id}`, 1);
+
+      let Embed3 = new Discord.RichEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(
+          `<:Check:618736570337591296> Purchased Fresh Nikes For 600 Coins`
+        );
+
+      db.subtract(`money_${message.guild.id}_${user.id}`, 600);
+      message.channel.send(Embed3);
+    } else if (args[0] == "car") {
+      let Embed2 = new Discord.RichEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(
+          `<:Cross:618736602901905418> You need 800 coins to purchase a new car`
+        );
+
+      if (author < 800) return message.channel.send(Embed2);
+
+      db.fetch(`car_${message.guild.id}_${user.id}`);
+      db.add(`car_${message.guild.id}_${user.id}`, 1);
+
+      let Embed3 = new Discord.RichEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(
+          `<:Check:618736570337591296> Purchased a New Car For 800 Coins`
+        );
+
+      db.subtract(`money_${message.guild.id}_${user.id}`, 800);
+      message.channel.send(Embed3);
+    } else if (args[0] == "mansion") {
+      let Embed2 = new Discord.RichEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(
+          `<:Cross:618736602901905418> You need 1200 coins to purchase a Mansion`
+        );
+
+      if (author < 1200) return message.channel.send(Embed2);
+
+      db.fetch(`house_${message.guild.id}_${user.id}`);
+      db.add(`house_${message.guild.id}_${user.id}`, 1);
+
+      let Embed3 = new Discord.RichEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(
+          `<:Check:618736570337591296> Purchased a Mansion For 1200 Coins`
+        );
+
+      db.subtract(`money_${message.guild.id}_${user.id}`, 1200);
+      message.channel.send(Embed3);
+    } else {
+      let embed3 = new Discord.RichEmbed()
+        .setColor("#FFFFFF")
+        .setDescription("<:Cross:618736602901905418> Enter an item to buy");
+      message.channel.send(embed3);
+    }
   }
 });
 
