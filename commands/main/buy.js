@@ -22,7 +22,6 @@ run: async (client, message, args) => {
 
     if (args[0] == "SA3") {
       if (author < 30) return message.channel.send(Embed);
-
       db.fetch(`sa3_${message.guild.id}_${user.id}`);
       db.set(`sa3_${message.guild.id}_${user.id}`, true);
 
@@ -44,7 +43,7 @@ run: async (client, message, args) => {
       );
 
       if (author < 100) return message.channel.send(Embed3);
-
+      
       db.fetch(`pza_${message.guild.id}_${user.id}`);
       db.set(`pza_${message.guild.id}_${user.id}`, true);
 
