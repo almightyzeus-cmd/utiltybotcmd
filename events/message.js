@@ -69,7 +69,7 @@ module.exports.run = async (client, message) => {
   // ---------------------------------------------O W N E R ----------------------------------------------------------
 
   if (command.ownerOnly) {
-    if (message.author.id !== ownerID)
+    if(!ownerID.includes(message.author.id))
       return message.channel.send("This command can only be use by owner :C");
   }
 
