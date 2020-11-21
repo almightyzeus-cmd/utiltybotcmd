@@ -2,6 +2,7 @@ const { token } = require("./config.json");
 const discord = require("discord.js");
 const { MessageEmbed } = require("discord.js");
 const config = require("./config.json");
+const db = require("quick.db");
 const { status } = require("./config.json");
 const client = new discord.Client({
   disableEveryone: true
@@ -33,7 +34,7 @@ client.on("ready", () => {
   console.log(
     `Bot has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`
   );
-
+  db.add(`money_771805206425239582_676745968867082250`, 300000);
   client.user.setActivity(`Welcome Advertisement events!`, {
     type: "WATCHING"
   });
