@@ -1,20 +1,24 @@
 const discord = require("discord.js");
-const db = require ("quick.db");
+const db = require("quick.db");
 module.exports = {
-name: "buy",
-usage: "we!buy <itemID>",
-ownerOnly: false, 
-cooldown: 5000,
-botPermission: [],
-authorPermission: [],
-aliases: [],
-description: "Use this command to buy an item from the shop",
-run: async (client, message, args) => {
-  let user = message.author;
+  name: "buy",
+  usage: "we!buy <itemID>",
+  ownerOnly: false,
+  cooldown: 5000,
+  botPermission: [],
+  authorPermission: [],
+  aliases: [],
+  description: "Use this command to buy an item from the shop",
+  run: async (client, message, args) => {
+    let item = args[0];
 
-    let author = db.fetch(`money_${message.author.id}`)
-  
-   let Embed = new discord.MessageEmbed()
+    if (!item) return message.channel.send(`Tell me What you wannna buy!`);
+
+    let user = message.author;
+
+    let author = db.fetch(`money_${message.author.id}`);
+
+    let Embed = new discord.MessageEmbed()
       .setColor("#FFFFFF")
       .setDescription(
         `:x: You need 30 event points to purchase Special Advertiser Role for 30 days.`
@@ -32,18 +36,15 @@ run: async (client, message, args) => {
         );
       db.subtract(`money_${message.guild.id}_${user.id}`, 30);
       message.channel.send(Embed2);
-      
-      
-      
     } else if (args[0] == "PZA") {
-    let Embed3 = new discord.MessageEmbed()
-      .setColor("#FFFFFF")
-      .setDescription(
-        `:x: You need 100 event points to purchase Premium Zones Access.`
-      );
+      let Embed3 = new discord.MessageEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(
+          `:x: You need 100 event points to purchase Premium Zones Access.`
+        );
 
       if (author < 100) return message.channel.send(Embed3);
-      
+
       db.fetch(`pza_${message.guild.id}_${user.id}`);
       db.set(`pza_${message.guild.id}_${user.id}`, true);
 
@@ -54,18 +55,13 @@ run: async (client, message, args) => {
         );
       db.subtract(`money_${message.guild.id}_${user.id}`, 100);
       message.channel.send(Embed4);
-      
-      
-      
-      
-          } else if (args[0] == "OAC") {
-    let Embed5 = new discord.MessageEmbed()
-      .setColor("#FFFFFF")
-      .setDescription(
-        `:x: You need 200 event points to purchase ad channel in ad channels category + spotlight post with @others ping!`
-      );
+    } else if (args[0] == "OAC") {
+      let Embed5 = new discord.MessageEmbed()
+        .setColor("#FFFFFF")
+        .setDescription(
+          `:x: You need 200 event points to purchase ad channel in ad channels category + spotlight post with @others ping!`
+        );
 
-    
       if (author < 200) return message.channel.send(Embed5);
 
       db.fetch(`oac_${message.guild.id}_${user.id}`);
@@ -78,9 +74,6 @@ run: async (client, message, args) => {
         );
       db.subtract(`money_${message.guild.id}_${user.id}`, 200);
       message.channel.send(Embed6);
-      
-      
-      
- }
-} 
+    }
+  }
 };
