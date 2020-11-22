@@ -10,7 +10,7 @@ module.exports = {
   description: "See your inventory.",
   run: async (client, message, args) => {
     let user = message.author;
-    let sa3 = db.startsWith(`sa3_${message.guild.id}_${user.id}`, {
+    let sa3 = db.get(`sa3_${user.id}`, {
       sort: ".data"
     });
     let content = "";

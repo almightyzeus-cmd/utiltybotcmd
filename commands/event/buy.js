@@ -26,15 +26,15 @@ module.exports = {
 
     if (args[0] == "SA3") {
       if (author < 30) return message.channel.send(Embed);
-      db.fetch(`sa3_${message.guild.id}_${user.id}`);
-      db.set(`sa3_${message.guild.id}_${user.id}`, true);
+      db.fetch(`sa3_${user.id}`);
+      db.set(`sa3_${user.id}`, true);
 
       let Embed2 = new discord.MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(
           `:white_check_mark: Purchased Special Advertiser Role for 30 days, For 30 Event Points.`
         );
-      db.subtract(`money_${message.guild.id}_${user.id}`, 30);
+      db.subtract(`money_${user.id}`, 30);
       message.channel.send(Embed2);
     } else if (args[0] == "PZA") {
       let Embed3 = new discord.MessageEmbed()
@@ -45,15 +45,15 @@ module.exports = {
 
       if (author < 100) return message.channel.send(Embed3);
 
-      db.fetch(`pza_${message.guild.id}_${user.id}`);
-      db.set(`pza_${message.guild.id}_${user.id}`, true);
+      db.fetch(`pza_${user.id}`);
+      db.set(`pza_${user.id}`, true);
 
       let Embed4 = new discord.MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(
           `:white_check_mark: Purchased Premium Zones Access, For 100 Event Points.`
         );
-      db.subtract(`money_${message.guild.id}_${user.id}`, 100);
+      db.subtract(`money_${user.id}`, 100);
       message.channel.send(Embed4);
     } else if (args[0] == "OAC") {
       let Embed5 = new discord.MessageEmbed()
@@ -64,15 +64,15 @@ module.exports = {
 
       if (author < 200) return message.channel.send(Embed5);
 
-      db.fetch(`oac_${message.guild.id}_${user.id}`);
-      db.set(`oac_${message.guild.id}_${user.id}`, true);
+      db.fetch(`oac_${user.id}`);
+      db.set(`oac_${user.id}`, true);
 
       let Embed6 = new discord.MessageEmbed()
         .setColor("#FFFFFF")
         .setDescription(
           `:white_check_mark: Purchased ad channel in ad channels category + spotlight post with @others ping, For 100 Event Points.`
         );
-      db.subtract(`money_${message.guild.id}_${user.id}`, 200);
+      db.subtract(`money_${user.id}`, 200);
       message.channel.send(Embed6);
     }
   }
