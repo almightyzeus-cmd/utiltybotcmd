@@ -74,6 +74,6 @@ module.exports = {
         );
       db.subtract(`money_${user.id}`, 200);
       message.channel.send(Embed6);
-    }
+    } 
   }
 };
