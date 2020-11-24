@@ -24,7 +24,7 @@ module.exports = {
         `:x: You need 30 event points to purchase Special Advertiser Role for 30 days.`
       );
 
-    if (args[0] == "SA3") {
+    if (args[0] == "sa3") {
       if (author < 30) return message.channel.send(Embed);
       db.fetch(`sa3_${user.id}`);
       db.set(`sa3_${user.id}`, true);
