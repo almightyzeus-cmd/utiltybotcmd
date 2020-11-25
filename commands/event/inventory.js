@@ -6,7 +6,7 @@ module.exports = {
   usage: "we!inventory",
   ownerOnly: false,
   cooldown: 5000,
-  aliases: [],
+  aliases: ["inv"],
   description: "See your inventory.",
   run: async (client, message, args) => {
     let user = message.author;

@@ -4,9 +4,8 @@ const db = require("quick.db");
 module.exports = {
   name: "balance",
   usage: "we!balance",
-  ownerOnly: false,
   cooldown: 5000,
-  aliases: [],
+  aliases: ["bal"],
   description: "See your balance.",
   run: async (client, message, args) => {
 
