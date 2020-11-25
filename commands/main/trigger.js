@@ -12,7 +12,7 @@ module.exports = {
 
         let image = await canva.trigger(avatar);
 
-        let triggered = new Discord.MessageAttachment(image, "triggered.png")
+        let triggered = new Discord.MessageAttachment(image, "triggered.gif")
 
         message.channel.send(triggered);
     }
