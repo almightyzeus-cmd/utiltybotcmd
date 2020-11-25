@@ -5,7 +5,7 @@ dependencies:
   express: 4.17.1
   fs: 0.0.2
   parse-ms: 2.1.0
-  quick.db: 7.0.0-b22
+  quick.db: 7.1.3
 packages:
   /@discordjs/collection/0.1.6:
     dev: false
@@ -77,14 +77,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
-  /better-sqlite3/5.4.3:
-    dependencies:
-      integer: 2.1.0
-      tar: 4.4.13
-    dev: false
-    requiresBuild: true
-    resolution:
-      integrity: sha512-fPp+8f363qQIhuhLyjI4bu657J/FfMtgiiHKfaTsj3RWDkHlWC1yT7c6kHZDnBxzQVoAINuzg553qKmZ4F1rEw==
   /better-sqlite3/7.1.1:
     dependencies:
       bindings: 1.5.0
@@ -438,11 +430,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
-  /integer/2.1.0:
-    dev: false
-    requiresBuild: true
-    resolution:
-      integrity: sha512-vBtiSgrEiNocWvvZX1RVfeOKa2mCHLZQ2p9nkQkQZ/BvEiY+6CcUz0eyjvIiewjJoeNidzg2I+tpPJvpyspL1w==
   /ipaddr.js/1.9.1:
     dev: false
     engines:
@@ -467,18 +454,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
-  /lodash.get/4.4.2:
+  /lodash/4.17.20:
     dev: false
     resolution:
-      integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
-  /lodash.set/4.3.2:
-    dev: false
-    resolution:
-      integrity: sha1-2HV7HagH3eJIFrDWqEvqGnYjCyM=
-  /lodash.unset/4.5.2:
-    dev: false
-    resolution:
-      integrity: sha1-Nw0dPoW3Kn4bDN8tJyEhMG8j5O0=
+      integrity: sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -693,15 +672,13 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
-  /quick.db/7.0.0-b22:
+  /quick.db/7.1.3:
     dependencies:
-      better-sqlite3: 5.4.3
-      lodash.get: 4.4.2
-      lodash.set: 4.3.2
-      lodash.unset: 4.5.2
+      better-sqlite3: 7.1.1
+      lodash: 4.17.20
     dev: false
     resolution:
-      integrity: sha512-Qi3Mx2ho1M0rWzVwrjh5zqmlNVTLqO6WgaI1suZ4qOxhjD3CFcH2nvOnL7o3kan5C0taCrs9/n4EIvq6CgpCaQ==
+      integrity: sha512-0S1fVb9OAZGhkI4ZIc5Oe4yWMwhz20xSsziwd6+yGWKKMsPt+XOfj/gD5CesGxd2WdqBkZFBiP8ZqWDu55HLHA==
   /range-parser/1.2.1:
     dev: false
     engines:
@@ -921,20 +898,6 @@ packages:
       node: '>=4.5'
     resolution:
       integrity: sha512-g2SVs5QIxvo6OLp0GudTqEf05maawKUxXru104iaayWA09551tFCTI8f1Asb4lPfkBr91k07iL4c11XO3/b0tA==
-  /tar/4.4.13:
-    dependencies:
-      chownr: 1.1.4
-      fs-minipass: 1.2.7
-      minipass: 2.9.0
-      minizlib: 1.3.3
-      mkdirp: 0.5.5
-      safe-buffer: 5.2.1
-      yallist: 3.1.1
-    dev: false
-    engines:
-      node: '>=4.5'
-    resolution:
-      integrity: sha512-w2VwSrBoHa5BsSyH+KxEqeQBAllHhccyMFVHtGtdMpF4W7IRWfZjFiQceJPChOeTsSDVUpER2T8FA93pr0L+QA==
   /toidentifier/1.0.0:
     dev: false
     engines:
@@ -1019,4 +982,4 @@ specifiers:
   express: ^4.17.1
   fs: ^0.0.2
   parse-ms: ^2.1.0
-  quick.db: 7.0.0-b22
+  quick.db: ^7.1.2
