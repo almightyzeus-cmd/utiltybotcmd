@@ -1,20 +1,29 @@
 const discord = require("discord.js");
-
+const db = require("quick.db");
 module.exports = {
-name: "shop",
-usage: "we!shop",
-ownerOnly: false, 
-cooldown: 5000,
-botPermission: [],
-authorPermission: [],
-aliases: [],
-description: "View the shop.",
-run: async (client, message, args) => {
-  const shop = new discord.MessageEmbed()
-  .setTitle('Shop:')
-  .setDescription('ID=SA3. 30 Points: Special advertiser role for 30 days!\n ID=PZA 100 Points: Premium Zone Access\n ID=OAC 200 Points: Get own ad channel in ad channels category + spotlight post with @others ping!')
-  .setFooter('You can buy those with Event Points.')
-  message.channel.send(shop)
-  
-}
+  name: "shop",
+  usage: "we!shop",
+  ownerOnly: false,
+  cooldown: 5000,
+  botPermission: [],
+  authorPermission: [],
+  aliases: ["store"],
+  description: "View the shop.",
+  run: async (client, message, args) => {
+    let items = args.join(" ");
+    let store = new discord.MessageEmbed().setTitle("Shop").setColor("RANDOM");
+    if (!items) return message.channel.send(store);
+
+    if (items === "item1" || "iteM1") {
+      let storeitem = new discord.MessageEmbed()
+        .setTitle(items)
+        .setColor("RANDOM");
+      message.channel.send(storeitem);
+    } else if (items === "item2" || "iteM2") {
+      let storeitem = new discord.MessageEmbed()
+        .setTitle(items)
+        .setColor("RANDOM");
+      message.channel.send(storeitem);
+    }
+  }
 };
