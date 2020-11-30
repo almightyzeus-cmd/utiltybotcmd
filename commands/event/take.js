@@ -11,8 +11,8 @@ authorPermission: [],
 aliases: [],
 description: "Nothing",
 run: async (client, message, args) => {
-  let userID = !args[0]
+  const taggedUser = message.mentions.users.first();
   let amount = !args[1]
-  db.subtract(`money_${userID}`, amount)
+  db.subtract(`money_${taggedUser}`, amount)
 }
 };
