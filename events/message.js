@@ -1,5 +1,5 @@
 const db = require("quick.db");
-const { ownerID, default_prefix } = require("../config.json");
+const { ownerID, teamID, default_prefix } = require("../config.json");
 let cooldown = {};
 
 module.exports.run = async (client, message) => {
@@ -67,13 +67,17 @@ module.exports.run = async (client, message) => {
       );
   }
 
-  // ---------------------------------------------OWNER ONLY
+  // ---------------------------------------------OWNER ONLY/EVENT TEAM ONLY---------------------------------------------
 
   if (command.ownerOnly) {
     if(!ownerID.includes(message.author.id))
       return message.channel.send("This command can only be use by owner :C");
   }
 
+  if(command.teamOnly){
+    if(!teamID.includes(message.author.id))
+      return message.channel.send("This command can only be use by event team :C");
+  }
   //------------------------------------------------------COOLDOWN SYSTEM---------------------------------------------
 
   let uCooldown = cooldown[message.author.id];
