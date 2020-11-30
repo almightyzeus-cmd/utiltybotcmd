@@ -67,7 +67,7 @@ module.exports.run = async (client, message) => {
       );
   }
 
-  // ---------------------------------------------O W N E R ----------------------------------------------------------
+  // ---------------------------------------------OWNER ONLY
 
   if (command.ownerOnly) {
     if(!ownerID.includes(message.author.id))
