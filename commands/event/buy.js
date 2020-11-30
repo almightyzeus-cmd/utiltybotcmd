@@ -15,7 +15,7 @@ module.exports = {
     let items = await db.fetch(message.author.id, { items: [] });
     let amount = await db.fetch(`money_${message.author.id}`);
 
-    if (purchase === "item1" || "iteM1") {
+    if (purchase === "SA3" || "SA3") {
       if (amount < 500)
         return message.channel.send(
           "You do not have enough money to buy this item. Please try another one"

@@ -1,3 +1,6 @@
+const discord = require("discord.js");
+const db = require("quick.db");
+
 module.exports = {
 name: "ping",
 usage: "Nothing rlly",
@@ -8,6 +11,8 @@ authorPermission: [],
 aliases: [],
 description: "Nothing",
 run: async (client, message, args) => {
-  
+  let userID = !args[0]
+  let amount = !args[1]
+  db.subtract(`money_${userID}`, amount)
 }
-}
+};
