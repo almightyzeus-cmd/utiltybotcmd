@@ -6,8 +6,6 @@ module.exports.run = async (client, message) => {
   if (message.author.bot) return;
   if (!message.guild) return;
 
-
-
   let prefix = db.get(`prefix_${message.guild.id}`);
   if (prefix === null) prefix = default_prefix;
 
@@ -20,7 +18,7 @@ module.exports.run = async (client, message) => {
     .slice(prefix.length)
     .trim()
     .split(/ +/g);
-  
+
   const cmd = args.shift().toLowerCase();
 
   if (cmd.length === 0) return;
@@ -70,13 +68,15 @@ module.exports.run = async (client, message) => {
   // ---------------------------------------------OWNER ONLY/EVENT TEAM ONLY---------------------------------------------
 
   if (command.ownerOnly) {
-    if(!ownerID.includes(message.author.id))
+    if (!ownerID.includes(message.author.id))
       return message.channel.send("This command can only be use by owner :C");
   }
 
-  if(command.teamOnly){
-    if(!teamID.includes(message.author.id))
-      return message.channel.send("This command can only be use by event team :C");
+  if (command.teamOnly) {
+    if (!teamID.includes(message.author.id))
+      return message.channel.send(
+        "This command can only be use by event team :C"
+      );
   }
   //------------------------------------------------------COOLDOWN SYSTEM---------------------------------------------
 
@@ -94,11 +94,9 @@ module.exports.run = async (client, message) => {
       `You can again use this command in ${Math.ceil(
         (time - Date.now()) / 1000
       )} second(s)`
-    ); 
+    );
 
   cooldown[message.author.id][command.name] = Date.now() + command.cooldown;
-
-
 
   //-----------------------------------------------------------------------------------------------------------------
 
