@@ -43,5 +43,4 @@ module.exports = {
       message.channel.send("Successfully bought one PZA");
     }
   }
-}dont touch
-there r fixes to makeeher
+}
