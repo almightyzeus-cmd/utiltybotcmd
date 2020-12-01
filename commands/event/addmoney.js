@@ -4,6 +4,7 @@ const db = require("quick.db");
 module.exports = {
   name: "addmoney",
   usage: "we!addmoney",
+  teamOnly: true,
   ownerOnly: true,
   cooldown: 5000,
   aliases: ["+$"],
@@ -17,13 +18,13 @@ module.exports = {
 
     db.add(`money_${user.id}`, args[1])
 
-    let bal = await db.fetch(`money_${message.guild.id}_${user.id}`)
+    let bal = await db.fetch(`money_${user.id}`)
 
     let moneyEmbed = new discord.MessageEmbed()
 
     .setColor("#00FF00")
 
-    .setDescription(`:Check: Added ${args[1]} coins\n\n**New Balance**: ${bal}`);
+    .setDescription(`:white_check_mark: Added ${args[1]} coins\n\n**New Balance**: ${bal}`);
 
     message.channel.send(moneyEmbed)
   }

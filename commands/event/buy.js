@@ -16,22 +16,32 @@ module.exports = {
     let amount = await db.fetch(`money_${message.author.id}`);
 
     if (purchase === "SA3" || "SA3") {
-      if (amount < 500)
+      if (amount < 30)
         return message.channel.send(
           "You do not have enough money to buy this item. Please try another one"
         );
       db.subtract(`money_${message.author.id}`, 500);
       db.push(message.author.id, "item1");
-      message.channel.send("Successfully bought one item1");
+      message.channel.send("Successfully bought one SA3");
     }
-    else if (purchase === "item2" || "iteM2") {
+    else if (purchase === "PZA" || "PZA") {
       if (amount < 250)
         return message.channel.send(
           "You do not have enough money to buy this item. Please try another one"
         );
       db.subtract(`money_${message.author.id}`, 250);
       db.push(message.author.id, "item2");
-      message.channel.send("Successfully bought one item2");
+      message.channel.send("Successfully bought one PZA");
+    }
+      else if (purchase === "OAC" || "OAC") {
+      if (amount < 250)
+        return message.channel.send(
+          "You do not have enough money to buy this item. Please try another one"
+        );
+      db.subtract(`money_${message.author.id}`, 250);
+      db.push(message.author.id, "item2");
+      message.channel.send("Successfully bought one PZA");
     }
   }
-};
+}dont touch
+there r fixes to makeeher
