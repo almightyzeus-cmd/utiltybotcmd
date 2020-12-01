@@ -18,7 +18,7 @@ module.exports = {
 
     db.subtract(`money_${message.guild.id}_${user.id}`, args[1])
 
-    let bal = await db.fetch(`money_${message.guild.id}_${user.id}`)
+    let bal = await db.get(`money_${message.guild.id}_${user.id}`)
 
     let moneyEmbed = new discord.MessageEmbed()
 
@@ -26,5 +26,6 @@ module.exports = {
 
     .setDescription(`✅ Removed ${args[1]} coins\n\nNew Balance: ${bal}`);
 
-    message.channel.send(moneyEmbed) }
+    message.channel.send(moneyEmbed) 
+  }
 };
