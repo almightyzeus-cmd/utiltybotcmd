@@ -21,9 +21,9 @@ module.exports = {
 
     let moneyEmbed = new discord.MessageEmbed()
 
-    .setColor("#FFFFFF")
+    .setColor("#00FF00")
 
-    .setDescription(`<:Check: Removed ${args[1]} coins\n\nNew Balance: ${bal}`);
+    .setDescription(`:Check: Added ${args[1]} coins\n\n**New Balance**: ${bal}`);
 
     message.channel.send(moneyEmbed)
   }
