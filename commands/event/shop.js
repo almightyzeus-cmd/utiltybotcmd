@@ -11,7 +11,10 @@ module.exports = {
   description: "View the shop.",
   run: async (client, message, args) => {
     let items = args.join(" ");
-    let store = new discord.MessageEmbed().setTitle("Shop").setColor("RANDOM");
+    let store = new discord.MessageEmbed()
+      .setTitle("Shop")
+      .setColor("RANDOM")
+      .setDescription("🚧");
     if (!items) return message.channel.send(store);
 
     if (items === "item1" || "iteM1") {
