@@ -1,7 +1,7 @@
 dependencies:
   ascii-table: 0.0.9
   better-sqlite3: 7.1.1
-  discord.js: 12.5.0
+  discord.js: 12.5.1
   express: 4.17.1
   fs: 0.0.2
   parse-ms: 2.1.0
@@ -227,21 +227,21 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
-  /discord.js/12.5.0:
+  /discord.js/12.5.1:
     dependencies:
       '@discordjs/collection': 0.1.6
       '@discordjs/form-data': 3.0.1
       abort-controller: 3.0.0
       node-fetch: 2.6.1
-      prism-media: 1.2.2
+      prism-media: 1.2.3
       setimmediate: 1.0.5
       tweetnacl: 1.0.3
-      ws: 7.4.0
+      ws: 7.4.1
     dev: false
     engines:
       node: '>=12.0.0'
     resolution:
-      integrity: sha512-MXZcnBIosHEOX26ipWEcZdUrTyfTbb4sDYYp0Go5N05PyI78LR8Ds7yAfMu0zUDmxFHYLSYX0pCdiO2pd4CP6w==
+      integrity: sha512-VwZkVaUAIOB9mKdca0I5MefPMTQJTNg0qdgi1huF3iwsFwJ0L5s/Y69AQe+iPmjuV6j9rtKoG0Ta0n9vgEIL6w==
   /ee-first/1.1.1:
     dev: false
     resolution:
@@ -637,15 +637,15 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-s8Aai8++QQGi4sSbs/M1Qku62PFK49Jm1CbgXklGz4nmHveDq0wzJkg7Na5QbnO1uNH8K7iqx2EQ/mV0MZEmOg==
-  /prism-media/1.2.2:
+  /prism-media/1.2.3:
     dev: false
     peerDependencies:
-      '@discordjs/opus': ^0.1.0
-      ffmpeg-static: ^2.4.0 || ^3.0.0
-      node-opus: ^0.3.1
-      opusscript: ^0.0.6
+      '@discordjs/opus': ^0.3.3
+      ffmpeg-static: ^4.2.7 || ^3.0.0 || ^2.4.0
+      node-opus: ^0.3.3
+      opusscript: ^0.0.7
     resolution:
-      integrity: sha512-I+nkWY212lJ500jLe4tN9tWO7nRiBAVdMv76P9kffZjYhw20raMlW1HSSvS+MLXC9MmbNZCazMrAr+5jEEgTuw==
+      integrity: sha512-fSrR66n0l6roW9Rx4rSLMyTPTjRTiXy5RVqDOurACQ6si1rKHHKDU5gwBJoCsIV0R3o9gi+K50akl/qyw1C74A==
   /process-nextick-args/2.0.1:
     dev: false
     resolution:
@@ -959,7 +959,7 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
-  /ws/7.4.0:
+  /ws/7.4.1:
     dev: false
     engines:
       node: '>=8.3.0'
@@ -967,7 +967,7 @@ packages:
       bufferutil: ^4.0.1
       utf-8-validate: ^5.0.2
     resolution:
-      integrity: sha512-kyFwXuV/5ymf+IXhS6f0+eAFvydbaBW3zjpT6hUdAh/hbVjTIB5EHBGi0bPoCLSK2wcuz3BrEkB9LrYv1Nm4NQ==
+      integrity: sha512-pTsP8UAfhy3sk1lSk/O/s4tjD0CRwvMnzvwr4OKGX7ZvqZtUyx4KIJB5JWbkykPoc55tixMGgTNoh3k4FkNGFQ==
   /yallist/3.1.1:
     dev: false
     resolution:
@@ -978,7 +978,7 @@ shrinkwrapVersion: 3
 specifiers:
   ascii-table: ^0.0.9
   better-sqlite3: ^7.1.0
-  discord.js: ^12.4.0
+  discord.js: ^12.5.0
   express: ^4.17.1
   fs: ^0.0.2
   parse-ms: ^2.1.0
