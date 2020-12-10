@@ -72,7 +72,8 @@ module.exports.run = async (client, message) => {
       return message.channel.send("This command can only be use by owner :C");
   }
     if(command.licenseOnly) {
-      if (!message.member.roles.cache.some(role => role.name === 'RoleName')) return)
+      if (!message.member.roles.cache.some(role => role.id === '771860604394274866'))
+        return message.channel.send("This command can only be used by people with their modmail license :C")
   }
   //------------------------------------------------------COOLDOWN SYSTEM---------------------------------------------
 
