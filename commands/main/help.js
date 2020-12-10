@@ -34,7 +34,7 @@ module.exports = {
 
       let com = {};
       for (let comm of commands.array()) {
-        let category = comm.category || "EVENT";
+        let category = comm.category || "UTILITY";
         let name = comm.name;
 
         if (!com[category]) {

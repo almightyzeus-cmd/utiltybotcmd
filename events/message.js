@@ -65,18 +65,14 @@ module.exports.run = async (client, message) => {
       );
   }
 
-  // ---------------------------------------------OWNER ONLY/EVENT TEAM ONLY---------------------------------------------
+  // ---------------------------------------------OWNER ONLY/MODMAIL LICENSE ONLY--------------------------------------------
 
   if (command.ownerOnly) {
     if (!ownerID.includes(message.author.id))
       return message.channel.send("This command can only be use by owner :C");
   }
-
-  if (command.teamOnly) {
-    if (!teamID.includes(message.author.id))
-      return message.channel.send(
-        "This command can only be use by event team :C"
-      );
+    if(command.licenseOnly) {
+      if (!message.member.roles.cache.some(role => role.name === 'RoleName')) return)
   }
   //------------------------------------------------------COOLDOWN SYSTEM---------------------------------------------
 
