@@ -1,5 +1,4 @@
 const discord = require('discord.js');
-const config = require("../config.json");
 module.exports = {
 name: "claim",
 usage: "wa!unclaim <reason>",
@@ -11,6 +10,7 @@ authorPermission: [],
 aliases: [],
 description: "Claim a ticket!",
 run: async (client, message, args) => {
+  const config = require("../config.json");
     const reason = message.content
     .slice(config.prefix.length)
     .trim()
