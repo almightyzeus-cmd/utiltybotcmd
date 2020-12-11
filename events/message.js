@@ -80,6 +80,11 @@ module.exports.run = async (client, message) => {
       return message.channel.send("This command can only be used by people with perms to strike :C")
   }
   
+  if(command.reportOnly) {
+    if (!message.member.roles.cache.some(role => role.id === '771828226171338792'))
+      return message.channel.send("This command can only be used by NM+ :C")
+  }
+  
   //------------------------------------------------------COOLDOWN SYSTEM---------------------------------------------
 
   let uCooldown = cooldown[message.author.id];
