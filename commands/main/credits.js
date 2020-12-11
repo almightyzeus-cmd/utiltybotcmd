@@ -9,8 +9,8 @@ module.exports = {
   run: (client, message) => {
     let credits = new discord.MessageEmbed()
       .setTitle("Credits:")
-      .setDescription("Help command: MrFluffyCloud\nPing command: MrFluffyCloud\nCommand handlers: MrFluffyCloud\nModmail commands: Argent Excellence")
-      .setFooter('Made with ♡ by Argent Excellence')
+      .setDescription("Help command: MrFluffyCloud\nPing command: MrFluffyCloud\nCommand handlers: MrFluffyCloud\nConstructors: MrFluffyCloud\nModmail commands: Argent Excellence")
+      .setFooter('Made by Argent Excellence.')
       .setColor("#00FFFF");
 
     message.channel.send(credits);
