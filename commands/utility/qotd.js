@@ -11,6 +11,9 @@ aliases: [],
 description: "Make a QOTD!",
 run: async (client, message, args) => {
  const qotdembed = new discord.MessageEmbed()
- .setTitle('')
+ .setTitle('Question Of The Day')
+ .setDescription(`${args}`)
+ .setFooter('Answer in <#762397711994454017>.')
+ message.channel.send(qotdembed)
 }
 }
