@@ -76,7 +76,7 @@ module.exports.run = async (client, message) => {
         return message.channel.send("This command can only be used by people with their modmail license :C")
   }
   if(command.strikeOnly) {
-    if (!message.member.roles.cache.some(role => role.id === '771828226171338792', '785466588966682625', '777176304675848202'))
+    if (!message.member.roles.cache.some(role => role.id === '787014735241019422'))
       return message.channel.send("This command can only be used by people with perms to strike :C")
   }
   
