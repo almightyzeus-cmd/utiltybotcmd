@@ -16,13 +16,19 @@ run: async (client, message, args) => {
  .setDescription(`${args}`)
  .setFooter('Answer in <#762397711994454017>.')
  
- 
+ if(!args[0]) {
+   const oneword = args[0]
+ }
 
+  if(!args[1]) {
+    const twoword = args[2]
+  }
+  
  const exampleEmbed = new discord.MessageEmbed()
 	.setColor('#000000')
 	.setTitle('Question Of The Day')
 	.setAuthor(`message.author.tag`, `message.author.avatarURL()`)
-	.setDescription(`${args}`)
+	.setDescription(``)
 	.setFooter('Answer in <#762397711994454017>');
 
 message.channel.send(exampleEmbed);
