@@ -13,10 +13,11 @@ run: async (client, message, args) => {
   const reportembed = new discord.MessageEmbed()
   .setAuthor('Report')
   .setTitle('From Welcome Advertisements | Free Unlimited Advertising')
-  .addField('Reported By', `${message.author.id}`, true)
-  .addField('Suspect', `${suspect.username}`, true)
+  .addField('Reported By', `${message.author.tag}`, true)
+  .addField('Suspect', `${suspect.tag}`, true)
   .setTimestamp()
   const channel = client.channels.cache.get('778175703358373949');
     channel.send(reportembed);
+
 }
 }
