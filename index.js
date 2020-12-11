@@ -52,5 +52,11 @@ client.on("guildDelete", guild => {
   client.user.setActivity(`Welcome Advertisements!`, {
     type: "WATCHING"
   });
+  
+  
+ 
+  
+  
+  
 });
 client.login(process.env.DISCORD_TOKEN);

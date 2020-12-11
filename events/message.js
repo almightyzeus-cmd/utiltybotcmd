@@ -85,6 +85,9 @@ module.exports.run = async (client, message) => {
       return message.channel.send("This command can only be used by NM+ :C")
   }
   
+
+  
+  
   //------------------------------------------------------COOLDOWN SYSTEM---------------------------------------------
 
   let uCooldown = cooldown[message.author.id];
