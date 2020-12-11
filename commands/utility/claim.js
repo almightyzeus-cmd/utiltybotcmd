@@ -1,6 +1,7 @@
 const discord = require('discord.js')
 module.exports = {
 name: "claim",
+category: "modmail",
 usage: "wa!claim",
 ownerOnly: false, 
 licenseOnly: true,
