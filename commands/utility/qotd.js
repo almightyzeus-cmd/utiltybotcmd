@@ -15,6 +15,20 @@ run: async (client, message, args) => {
  .setTitle('Question Of The Day')
  .setDescription(`${args}`)
  .setFooter('Answer in <#762397711994454017>.')
- message.channel.send(qotdembed)
+ 
+ 
+
+ const exampleEmbed = new discord.MessageEmbed()
+	.setColor('#000000')
+	.setTitle('Question Of The Day')
+	.setAuthor(`message.author.tag`, `message.author.avatarURL()`)
+	.setDescription(`${args}`)
+	.setFooter('Answer in <#762397711994454017>');
+
+message.channel.send(exampleEmbed);
+  
+  
+  
+  
 }
 }
