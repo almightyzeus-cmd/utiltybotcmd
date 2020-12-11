@@ -12,7 +12,8 @@ description: "Claim a ticket!",
 run: async (client, message, args) => {
   const claimembed = new discord.MessageEmbed()
   .setTitle('Claimed')
-  .setDescription(`${message.author.mention} successfully claimed this thread!`)
-  .setFooter('')
+  .setDescription(`<@${message.author.id}> successfully claimed this thread!`)
+  .setFooter('Made with ♡ by Argent Excellence')
+  message.channel.send(claimembed)
 }
 }

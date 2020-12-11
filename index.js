@@ -34,7 +34,7 @@ client.on("ready", () => {
   console.log(
     `Bot has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`
   );
-  client.user.setActivity(`Welcome Advertisement events!`, {
+  client.user.setActivity(`Welcome Advertisement!`, {
     type: "WATCHING"
   });
 });
@@ -42,14 +42,14 @@ client.on("guildCreate", guild => {
   console.log(
     `New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`
   );
-  client.user.setActivity(`over Welcome Advertisement events!`, {
+  client.user.setActivity(`Welcome Advertisement!`, {
     type: "WATCHING"
   });
 });
 
 client.on("guildDelete", guild => {
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`over Welcome Advertisement events!`, {
+  client.user.setActivity(`Welcome Advertisement!`, {
     type: "WATCHING"
   });
 });
