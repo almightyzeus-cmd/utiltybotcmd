@@ -32,7 +32,7 @@ client.on("uncaughtException", err => {
 });
 client.on("ready", () => {
   console.log(
-    `Bot has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`
+ "Bot has started."
   );
   client.user.setActivity(`Welcome Advertisements!`, {
     type: "WATCHING"

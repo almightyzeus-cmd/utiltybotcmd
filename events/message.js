@@ -71,10 +71,8 @@ module.exports.run = async (client, message) => {
     if (!ownerID.includes(message.author.id))
       return message.channel.send("This command can only be use by owner :C");
   }
-    if(command.licenseOnly) {
-      if (!message.member.roles.cache.some(role => role.id === '771860604394274866'))
-        return message.channel.send("This command can only be used by people with their modmail license :C")
-  }
+  
+  
   //------------------------------------------------------COOLDOWN SYSTEM---------------------------------------------
 
   let uCooldown = cooldown[message.author.id];
