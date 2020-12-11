@@ -16,7 +16,8 @@ module.exports = {
     if(!message.mentions.members.first()) {
       message.channel.send("Please mention a user to strike.")
     }
-    db.add(`strikes_${user}`, 1)
+     const amount = args[1]
+    db.add(`strikes_${user}`, amount)
     const strikesamount = db.get(`strikes_${user}`)
     const strikeembed = new discord.MessageEmbed()
    .setTitle("Striked!")
