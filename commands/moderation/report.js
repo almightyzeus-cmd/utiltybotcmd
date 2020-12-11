@@ -17,6 +17,7 @@ run: async (client, message, args) => {
   .setTimestamp()
   const channel = client.channels.cache.get('778175703358373949');
     channel.send(reportembed);
+  message.channel.send("Successfully reported.")
 
 }
 }
