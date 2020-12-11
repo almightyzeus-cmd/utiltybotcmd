@@ -65,7 +65,7 @@ module.exports.run = async (client, message) => {
       );
   }
 
-  // ---------------------------------------------OWNER ONLY/MODMAIL LICENSE ONLY--------------------------------------------
+  // ---------------------------------------------ONLY STUFF--------------------------------------------
 
   if (command.ownerOnly) {
     if (!ownerID.includes(message.author.id))
@@ -75,6 +75,11 @@ module.exports.run = async (client, message) => {
       if (!message.member.roles.cache.some(role => role.id === '771860604394274866'))
         return message.channel.send("This command can only be used by people with their modmail license :C")
   }
+  if(command.strikeOnly) {
+    if (!message.member.roles.cache.some(role => role.id === '771828226171338792', '785466588966682625', '777176304675848202'))
+      return message.channel.send("This command can only be used by people with perms to strike :C")
+  }
+  
   //------------------------------------------------------COOLDOWN SYSTEM---------------------------------------------
 
   let uCooldown = cooldown[message.author.id];
