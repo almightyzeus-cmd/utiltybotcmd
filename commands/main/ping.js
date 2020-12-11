@@ -10,6 +10,7 @@ module.exports = {
     let ping = new discord.MessageEmbed()
       .setTitle(":ping_pong: Pong!")
       .setDescription(`${client.ws.ping} **ms** `)
+      .setFooter('Made with ♡ by Argent Excellence')
       .setColor("#00FFFF");
 
     message.channel.send(ping);
