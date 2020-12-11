@@ -1,5 +1,5 @@
 const discord = require('discord.js');
-const botconfig = require("../config.json");
+const config = require("../config.json");
 module.exports = {
 name: "claim",
 usage: "wa!unclaim <reason>",
@@ -15,7 +15,7 @@ run: async (client, message, args) => {
     .slice(config.prefix.length)
     .trim()
     .split(/ +/g);
-    
+    const claimembed = new discord.MessageEmbed()
   .setTitle('Unclaimed')
   .setDescription(`<@${message.author.id}> successfully unclaimed this thread for: !`)
   .setFooter('Made with ♡ by Argent Excellence')
