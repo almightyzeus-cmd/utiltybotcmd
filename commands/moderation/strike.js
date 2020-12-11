@@ -22,6 +22,7 @@ module.exports = {
    .setTitle("Striked!")
    .setDescription(`Successfully striked <@${user.id}>, they are now at ${strikesamount} strikes!`)
    .setTimestamp()
-   message.channel.send(strikeembed)
+    const channel = client.channels.cache.get('771837678823931937');
+    channel.send(strikeembed);
   }
 };
