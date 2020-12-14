@@ -23,7 +23,8 @@ module.exports = {
    .setTitle("Unstriked!")
    .setDescription(`Successfully unstriked <@${user.id}>, they now have ${strikesamount} strikes left!`)
    .setTimestamp()
-    const channel = client.channels.cache.get('771837678823931937');
+      const channel = client.channels.cache.get('771837678823931937');
     channel.send(unstrikeembed);
+  message.channel.send("Successfully unstriked!")
   }
 };
