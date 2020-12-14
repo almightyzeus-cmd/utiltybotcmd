@@ -2,7 +2,7 @@ const discord = require('discord.js')
 module.exports = {
 name: "report",
 usage: "wa!report <user>",
-category: "reports",
+category: "main",
 ownerOnly: false, 
 cooldown: 5000,
 botPermission: [],
