@@ -21,11 +21,12 @@ run: async (client, message, args) => {
   .setTimestamp()
   
   const channel = client.channels.cache.get('753921331321503805');
-    channel.send(suggest);
+    channel.send(suggest).then(m => m.react('✔', '❎'));
+
   message.channel.send("Successfully suggested.")
   
   const staffsuggest = client.channels.cache.get('777933046497542194')
-  staffsuggest.send(suggest)
+  staffsuggest.send(suggest).then(m => m.react('✔', '❎'));
 
 }
 }
