@@ -10,7 +10,7 @@ module.exports = {
   botPermission: [],
   authorPermission: [],
   aliases: [],
-  description: "Nothing",
+  description: "Strike a user!",
   run: async (client, message, args) => {
     const user = message.mentions.members.first()
     if(!message.mentions.members.first()) {

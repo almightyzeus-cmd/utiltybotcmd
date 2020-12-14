@@ -8,7 +8,7 @@ cooldown: 5000,
 botPermission: [],
 authorPermission: [],
 aliases: [],
-description: "Nothing",
+description: "Report a user!",
 run: async (client, message, args) => {
    
     let reason = args.join(" ").slice(22);

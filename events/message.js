@@ -74,6 +74,10 @@ module.exports.run = async (client, message) => {
     if(command.licenseOnly) {
       if (!message.member.roles.cache.some(role => role.id === '771860604394274866'))
         return message.channel.send("This command can only be used by people with their modmail license :C")
+    }
+  if(command.purgeOnly) {
+    if (!message.member.hasPermission(['MANAGE_MESSAGES']))
+      return message.reply("This command can only be used by people with perms to delete messages :C");
   }
   if(command.strikeOnly) {
     if (!message.member.roles.cache.some(role => role.id === '787014735241019422'))

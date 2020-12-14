@@ -10,7 +10,7 @@ module.exports = {
   botPermission: [],
   authorPermission: [],
   aliases: ["unstrike", "-strike"],
-  description: "Nothing",
+  description: "Remove a users strike(s)!",
   run: async (client, message, args) => {
     const user = message.mentions.members.first()
     if(!message.mentions.members.first()) {
