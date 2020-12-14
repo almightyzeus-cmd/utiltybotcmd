@@ -4,6 +4,7 @@ module.exports = {
   name: "strike",
   usage: "wa!strike <user> amiunt",
   category: "moderation",
+  staffOnly: true,
   ownerOnly: false,
   strikeOnly: true,
   cooldown: 5000,
