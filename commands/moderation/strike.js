@@ -2,7 +2,7 @@ const discord = require('discord.js')
 const db = require('quick.db')
 module.exports = {
   name: "strike",
-  usage: "wa!strike <user> <reason>",
+  usage: "wa!strike <user> amiunt",
   category: "moderation",
   ownerOnly: false,
   strikeOnly: true,
@@ -22,6 +22,6 @@ module.exports = {
    .setTitle("Striked!")
    .setDescription(`Successfully striked <@${user.id}>, they are now at ${strikesamount} strikes!`)
    .setTimestamp()
-    client.channels.get('771837678823931937').send(strikeembed);
+  
   }
 };
