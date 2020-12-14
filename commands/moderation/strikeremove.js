@@ -2,14 +2,14 @@ const discord = require('discord.js')
 const db = require('quick.db')
 module.exports = {
   name: "removestrike",
-  usage: "wa!unstrike <user> <amount>",
+  usage: "wa!removestrike <user> <amount>",
   category: "moderation",
   ownerOnly: false,
   strikeOnly: true,
   cooldown: 5000,
   botPermission: [],
   authorPermission: [],
-  aliases: [],
+  aliases: ["unstrike", "-strike"],
   description: "Nothing",
   run: async (client, message, args) => {
     const user = message.mentions.members.first()
