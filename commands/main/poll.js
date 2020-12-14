@@ -1,7 +1,7 @@
 const discord = require('discord.js')
 module.exports = {
-name: "suggest",
-usage: "wa!suggest <suggestion>",
+name: "poll",
+usage: "wa!poll <QUESTION>",
 category: "main",
 ownerOnly: false, 
 cooldown: 5000,
@@ -12,11 +12,11 @@ description: "Make a suggestion!",
 run: async (client, message, args) => {
    
    let reason = args.join(" ")
-    if (reason.length < 1) return message.reply('What would you like to suggest?')
+    if (reason.length < 1) return message.reply('What would you like to make a poll for?')
 
   const suggest = new discord.MessageEmbed()
   .setAuthor(`${message.author.tag}`)
-  .setTitle('SUGGESTION')
+  .setTitle('POLL')
   .setDescription(`${reason}`)
   .setTimestamp()
   
