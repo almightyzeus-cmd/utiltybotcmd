@@ -4,6 +4,7 @@ name: "poll",
 usage: "wa!poll <QUESTION>",
 category: "main",
 ownerOnly: false, 
+manageOnly: true,
 cooldown: 5000,
 botPermission: [],
 authorPermission: [],
@@ -15,23 +16,14 @@ run: async (client, message, args) => {
     if (reason.length < 1) return message.reply('What would you like to make a poll for?')
 
   const suggest = new discord.MessageEmbed()
-  .setAuthor(`${message.author.tag}`)
-  .setTitle('POLL')
+  .setTitle('New poll!')
   .setDescription(`${reason}`)
   .setTimestamp()
   
-  const channel = client.channels.cache.get('753921331321503805');
+  const channel = client.channels.cache.get('762396932597350410');
    channel.send(suggest).then(sentEmbed => {
-    sentEmbed.react("✅")
-    sentEmbed.react("❌")
-})
-
-  message.channel.send("Successfully suggested.")
-  
-  const staffsuggest = client.channels.cache.get('777933046497542194')
-  staffsuggest.send(suggest).then(sentEmbed => {
-    sentEmbed.react("✅")
-    sentEmbed.react("❌")
+    sentEmbed.react("👍")
+    sentEmbed.react("👎")
 })
 }
 }
