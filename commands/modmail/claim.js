@@ -8,7 +8,7 @@ licenseOnly: true,
 cooldown: 5000,
 botPermission: [],
 authorPermission: [],
-aliases: [],
+aliases: ["mine"],
 description: "Claim a ticket!",
 run: async (client, message, args) => {
   const claimembed = new discord.MessageEmbed()
