@@ -1,7 +1,7 @@
 const discord = require('discord.js')
 module.exports = {
-name: "ban",
-usage: "wa!ban <user> <reason>",
+name: "unban",
+usage: "wa!unban <user> <reason>",
 ownerOnly: false, 
 category: "moderation",
 banOnly: true,
@@ -9,21 +9,21 @@ cooldown: 1000,
 botPermission: [],
 authorPermission: [],
 aliases: [],
-description: "Ban users!",
+description: "Unban users!",
 run: async (client, message, args) => {
   
   if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Invalid Permissions")
-let User = message.guild.member(message.mentions.users.first()) || message.guild.members.cache.get(args[0])
+let User = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
 if (!User) return message.channel.send("Invalid User")
-let banReason = args.join(" ").slice(22);
-if (!banReason) {
-  banReason = "None"
+let unbanReason = args.join(" ").slice(22);
+if (!unbanReason) {
+unbanReason = "None"
 }
 
-User.ban({reason: banReason})
+User.unban({reason: unbanReason})
   const banembed = new discord.MessageEmbed()
   .setTitle("Banned!")
-  .setDescription(`${User.tag} was banned for: ${banReason}`)
+  .setDescription(`${User.tag} was unbanned for: ${unbanReason}`)
   .setTimestamp()
   message.channel.send(banembed)
   
