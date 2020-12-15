@@ -79,6 +79,11 @@ module.exports.run = async (client, message) => {
     if (!message.member.hasPermission(['MANAGE_MESSAGES']))
       return message.reply("This command can only be used by people with perms to delete messages :C");
   }
+  if(command.banOnly) {
+    if (!message.member.hasPermission(['BAN_MEMBERS']))
+      return message.channel.send("This command can only be used by people with perms to ban :C")
+  }
+  
   if(command.strikeOnly) {
     if (!message.member.roles.cache.some(role => role.id === '787014735241019422'))
       return message.channel.send("This command can only be used by people with perms to strike :C")
